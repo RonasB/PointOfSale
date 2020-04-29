@@ -1,10 +1,16 @@
 package integration;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class ItemDTOTest {
+    private ItemDTO itemDTOToTest;
+    @BeforeEach
+    void setUp(){
+        itemDTOToTest = new ItemDTO("Banana", 1, 0.06);
+    }
 
     @Test
     void getName() {
@@ -68,6 +74,41 @@ class ItemDTOTest {
         String expectedResult = name + ", price: " + price + ", " + VATRate*100 + "% VAT | ";
         String result = itemDTO.toString();
         assertEquals(expectedResult, result, "The strings are equal");
+    }
+
+    @Test
+    void testEquals() {
+        String name = "Banana";
+        double price = 1;
+        double VATRate = 0.06;
+        ItemDTO itemToSeeIfEqual= new ItemDTO(name,price,VATRate);
+        Boolean expectedResult = true;
+        Boolean result = itemDTOToTest.equals(itemToSeeIfEqual);
+        assertEquals(expectedResult, result, "The items with the same parameters are not equal");
+    }
+    @Test
+    void testNotEquals() {
+        String name = "Bana2na";
+        double price = 1;
+        double VATRate = 0.06;
+        ItemDTO itemToSeeIfEqual = new ItemDTO(name,price,VATRate);
+        Boolean expectedResult = true;
+        Boolean result = itemDTOToTest.equals(itemToSeeIfEqual);
+        assertNotEquals(expectedResult, result, "The items with different parameters are equal");
+    }
+    @Test
+    void testNotEqualsNull() {
+        ItemDTO itemToSeeIfEqual = null;
+        Boolean expectedResult = false;
+        Boolean result = itemDTOToTest.equals(itemToSeeIfEqual);
+        assertEquals(expectedResult, result, "The result equals null");
+    }
+    @Test
+    void testNotEqualsObject() {
+        Object object = new Object();
+        Boolean expectedResult = false;
+        Boolean result = itemDTOToTest.equals(object);
+        assertEquals(expectedResult, result, "The item equals Object");
     }
 
 }
