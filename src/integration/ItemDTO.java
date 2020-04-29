@@ -64,17 +64,22 @@ public class ItemDTO {
 
 		if(objectToCompare instanceof ItemDTO){
 			ItemDTO itemToCompare = (ItemDTO) objectToCompare;
-			if(!(this.getName().equals(itemToCompare.getName())))
-				return false;
-			else if (!(this.getPrice() == itemToCompare.getPrice()))
-				return false;
-			else if (!(this.getVATRate() == itemToCompare.getVATRate()))
-				return false;
-			else
-				return true;
+			return equalsDTO(itemToCompare);
 
 		} else
 			return false;
+	}
+
+	private boolean equalsDTO(ItemDTO itemToCompare)
+	{
+		if(!(this.getName().equals(itemToCompare.getName())))
+			return false;
+		else if (!(this.getPrice() == itemToCompare.getPrice()))
+			return false;
+		else if (!(this.getVATRate() == itemToCompare.getVATRate()))
+			return false;
+		else
+			return true;
 	}
 
 }
