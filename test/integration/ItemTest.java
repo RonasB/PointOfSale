@@ -53,7 +53,7 @@ class ItemTest {
         assertEquals(expectedResult, result, "The items with the same parameters are not equal");
     }
     @Test
-    void testEqualsNot() {
+    void testNotEquals() {
         String name = "Bana2na";
         double price = 1;
         double VATRate = 0.06;
@@ -64,11 +64,18 @@ class ItemTest {
         assertNotEquals(expectedResult, result, "The items with different parameters are equal");
     }
     @Test
-    void testEqualsNull() {
+    void testNotEqualsNull() {
         Item itemToSeeIfEqual = null;
         Boolean expectedResult = false;
         Boolean result = itemToTest.equals(itemToSeeIfEqual);
-        assertEquals(expectedResult, result, "The items with the same parameters are not equal");
+        assertEquals(expectedResult, result, "The result equals null");
+    }
+    @Test
+    void testNotEqualsObject() {
+        Object object = new Object();
+        Boolean expectedResult = false;
+        Boolean result = itemToTest.equals(object);
+        assertEquals(expectedResult, result, "The item equals Object");
     }
 
     @Test

@@ -52,13 +52,17 @@ public class Item {
 
 		if(objectToCompare instanceof Item){
 			Item itemToCompare = (Item) objectToCompare;
-			if(this.itemDTO.equals(itemToCompare.itemDTO))
-				return true;
-			else
-				return false;
-
+			return equalsItem(itemToCompare);
 		} else
 			return false;
+	}
+
+	private boolean equalsItem(Item itemToCompare){
+		if(this.itemDTO.equals(itemToCompare.itemDTO))
+			return true;
+		else
+			return false;
+
 	}
 
 	/**
