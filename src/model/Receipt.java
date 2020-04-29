@@ -31,6 +31,7 @@ public class Receipt {
 	{
 		StringBuilder receiptFormat = new StringBuilder();
 		LocalDateTime timeOfSale = LocalDateTime.now();
+		appendString(receiptFormat," ");
 		appendString(receiptFormat,"-------------------------------------------------");
 		appendString(receiptFormat,timeOfSale.toLocalDate().toString());
 		appendString(receiptFormat,"Fruit Store, Store Avenue 1034");
