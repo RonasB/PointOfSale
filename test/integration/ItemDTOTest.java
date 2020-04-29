@@ -25,7 +25,7 @@ class ItemDTOTest {
         ItemDTO itemDTO = new ItemDTO(name,price,VATRate);
         double expectedResult = price;
         double result = itemDTO.getPrice();
-        assertEquals(expectedResult,result, "The strings are not equal");
+        assertEquals(expectedResult,result, "The values are not equal");
     }
 
     @Test
@@ -36,7 +36,7 @@ class ItemDTOTest {
         ItemDTO itemDTO = new ItemDTO(name,price,VATRate);
         double expectedResult = VATRate;
         double result = itemDTO.getVATRate();
-        assertEquals(expectedResult,result, "The strings are not equal");
+        assertEquals(expectedResult,result, "The values are not equal");
     }
 
     @Test
@@ -57,7 +57,7 @@ class ItemDTOTest {
         ItemDTO itemDTO = new ItemDTO(name,price,VATRate);
         String expectedResult = name + ", pri: " + price + ", " + VATRate*100 + "% VAT | ";
         String result = itemDTO.toString();
-        assertNotEquals(expectedResult, result, "Wrong string returned by toString");
+        assertNotEquals(expectedResult, result, "The strings are equal");
     }
     @Test
     void testToStringNoName() {
@@ -67,7 +67,7 @@ class ItemDTOTest {
         ItemDTO itemDTO = new ItemDTO(name,price,VATRate);
         String expectedResult = name + ", price: " + price + ", " + VATRate*100 + "% VAT | ";
         String result = itemDTO.toString();
-        assertEquals(expectedResult, result, "Wrong string returned by toString");
+        assertEquals(expectedResult, result, "The strings are equal");
     }
 
 }

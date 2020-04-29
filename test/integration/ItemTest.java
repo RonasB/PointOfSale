@@ -99,7 +99,7 @@ class ItemTest {
         int quantity = 3;
         String expectedResult = itemDTO + "quantity: " + quantity;
         String result = itemToTest.toString();
-        assertNotEquals(expectedResult, result, "Wrong string returned by toString");
+        assertNotEquals(expectedResult, result, "The strings are equal");
     }
 
     @Test
@@ -111,7 +111,7 @@ class ItemTest {
         int quantity = 3;
         String expectedResult = itemDTO + "quantity: " + quantity;
         String result = itemToTest.toString();
-        assertNotEquals(expectedResult, result, "Wrong string returned by toString");
+        assertNotEquals(expectedResult, result, "The strings are equal");
     }
 
     @Test
