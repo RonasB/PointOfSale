@@ -48,9 +48,9 @@ public class Controller {
      */
 	public String registerItem(String itemIdentifier, int quantity) {
 		ItemDTO itemDTO = inventorySystem.findItem(itemIdentifier);
-		Item item = inventorySystem.getItem(itemDTO, quantity);
-		sale.addItem(item);
-		return item + "\nRunning total is: " + sale.getTotal();
+		Item itemToBuy = inventorySystem.getItem(itemDTO, quantity);
+		sale.addItem(itemToBuy);
+		return itemToBuy + "\nRunning total is: " + sale.getTotal();
 
 
 	}

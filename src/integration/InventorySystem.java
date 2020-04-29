@@ -46,8 +46,8 @@ public class InventorySystem {
      * @return The item
      */
 	public Item getItem(ItemDTO itemDTO, int quantity) {
-		Item item = new Item(itemDTO, quantity);
-		return item;
+		Item itemToBuy = new Item(itemDTO, quantity);
+		return itemToBuy;
 	}
 
     /**
@@ -55,12 +55,15 @@ public class InventorySystem {
      * @param itemsToBuy The array list containing the items and their quantites that the customer wants to buy
      */
 	public void updateInventory(ArrayList<Item> itemsToBuy) {
-		for(Item item : itemsToBuy)
+		for(Item itemToBuy : itemsToBuy)
 		{
-			int previousAmountInInventory = itemsInInventory.get(item.getItemDTO());
-			itemsInInventory.replace(item.getItemDTO(),previousAmountInInventory - item.getQuantity());
+			updateQuantity(itemToBuy);
 		}
 
+	}
+	private void updateQuantity(Item itemToBuy){
+		int previousAmountInInventory = itemsInInventory.get(itemToBuy.getItemDTO());
+		itemsInInventory.replace(itemToBuy.getItemDTO(),previousAmountInInventory - itemToBuy.getQuantity());
 	}
 
 }

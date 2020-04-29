@@ -62,7 +62,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ItemDTOTest">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="startup.Main" />
       <module name="PointOfSale" />
@@ -123,8 +123,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ItemDTOTest" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.ItemDTOTest" />
         <item itemvalue="JUnit.ItemTest" />
         <item itemvalue="JUnit.SaleTest" />
       </list>
@@ -148,7 +148,7 @@
       <workItem from="1587896702644" duration="7879000" />
       <workItem from="1587974642674" duration="6093000" />
       <workItem from="1588065139843" duration="9990000" />
-      <workItem from="1588146386149" duration="6765000" />
+      <workItem from="1588146386149" duration="7693000" />
     </task>
     <servers />
   </component>

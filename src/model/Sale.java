@@ -39,17 +39,17 @@ public class Sale {
 	 * Adds an item to an ArrayList and increases the total. If the item is already in the
 	 * ArrayList the items quantity is instead increased by the correct amount and the total
 	 * is increased
-	 * @param item The Item to add to the sale
+	 * @param itemToAdd The Item to add to the sale
 	 */
-	public void addItem(Item item) {
-        if (itemsToBuy.contains(item)) {
-            total.increaseTotal(item);
-            Item itemToUpdate = itemsToBuy.get(itemsToBuy.indexOf(item));
-            itemToUpdate.increaseQuantity(item.getQuantity());
+	public void addItem(Item itemToAdd) {
+        if (itemsToBuy.contains(itemToAdd)) {
+            total.increaseTotal(itemToAdd);
+            Item itemToUpdate = itemsToBuy.get(itemsToBuy.indexOf(itemToAdd));
+            itemToUpdate.increaseQuantity(itemToAdd.getQuantity());
 
         } else {
-            itemsToBuy.add(item);
-            total.increaseTotal(item);
+            itemsToBuy.add(itemToAdd);
+            total.increaseTotal(itemToAdd);
         }
 
 
