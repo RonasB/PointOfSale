@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="54d51373-89ff-433f-a61b-84803c88dbd6" name="Default Changelist" comment="" />
+    <list default="true" id="54d51373-89ff-433f-a61b-84803c88dbd6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/integration/ItemIdentifierNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PointOfSale/controller/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PointOfSale/controller/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PointOfSale/integration/InventorySystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PointOfSale/integration/InventorySystem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PointOfSale/startup/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PointOfSale/startup/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PointOfSale/view/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PointOfSale/view/View.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/integration/InventorySystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/integration/InventorySystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/startup/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/startup/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/View.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +26,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -124,8 +136,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.ItemDTOTest" />
         <item itemvalue="JUnit.ItemTest" />
+        <item itemvalue="JUnit.ItemDTOTest" />
         <item itemvalue="JUnit.SaleTest" />
       </list>
     </recent_temporary>
@@ -148,7 +160,9 @@
       <workItem from="1587896702644" duration="7879000" />
       <workItem from="1587974642674" duration="6093000" />
       <workItem from="1588065139843" duration="9990000" />
-      <workItem from="1588146386149" duration="7693000" />
+      <workItem from="1588146386149" duration="9049000" />
+      <workItem from="1588587929857" duration="253000" />
+      <workItem from="1589017111318" duration="2316000" />
     </task>
     <servers />
   </component>
@@ -170,7 +184,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

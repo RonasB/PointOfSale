@@ -1,6 +1,7 @@
 package startup;
 
 import controller.Controller;
+import integration.ItemIdentifierNotFoundException;
 import view.View;
 import integration.SystemCreator;
 import integration.Printer;

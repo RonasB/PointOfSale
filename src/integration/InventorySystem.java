@@ -30,13 +30,15 @@ public class InventorySystem {
      * @param itemIdentifier The item to find in the inventory system
      * @return The itemDTO that equals the identifier, if not found returns null
      */
-	public ItemDTO findItem(String itemIdentifier) {
+	public ItemDTO findItem(String itemIdentifier) throws ItemIdentifierNotFoundException{
 		for (ItemDTO itemDTO : itemsInInventory.keySet())
 		{
 			if (itemDTO.getName().equals(itemIdentifier))
 				return itemDTO;
+
 		}
-		return null;
+		throw new ItemIdentifierNotFoundException(itemIdentifier);
+
 	}
 
     /**

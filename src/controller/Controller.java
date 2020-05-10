@@ -46,7 +46,7 @@ public class Controller {
      * @param quantity The quantity of the item that the customer wants to buy
      * @return A string displaying the the item and the running total
      */
-	public String registerItem(String itemIdentifier, int quantity) {
+	public String registerItem(String itemIdentifier, int quantity) throws ItemIdentifierNotFoundException {
 		ItemDTO itemDTO = inventorySystem.findItem(itemIdentifier);
 		Item itemToBuy = inventorySystem.getItem(itemDTO, quantity);
 		sale.addItem(itemToBuy);
