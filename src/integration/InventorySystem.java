@@ -29,12 +29,17 @@ public class InventorySystem {
      * Finds an item by searching the hash map for other items with the same name/identifier
      * @param itemIdentifier The item to find in the inventory system
      * @return The itemDTO that equals the identifier, if not found returns null
+	 * @throws ItemIdentifierNotFoundException thrown when the identifier is not found in the system
+	 * @throws SystemFailureException thrown when there is a system failure
      */
-	public ItemDTO findItem(String itemIdentifier) throws ItemIdentifierNotFoundException{
+	public ItemDTO findItem(String itemIdentifier) throws ItemIdentifierNotFoundException, SystemFailureException{
 		for (ItemDTO itemDTO : itemsInInventory.keySet())
 		{
+			if (itemIdentifier.equals("fail"))
+				throw new SystemFailureException("The system is not running");
 			if (itemDTO.getName().equals(itemIdentifier))
 				return itemDTO;
+
 
 		}
 		throw new ItemIdentifierNotFoundException(itemIdentifier);

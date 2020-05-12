@@ -1,5 +1,8 @@
 package integration;
 
+/**
+ * An exception that is thrown when the item identifier specified does not exist in the system
+ */
 public class ItemIdentifierNotFoundException extends Exception {
 
     /**

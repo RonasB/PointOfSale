@@ -1,10 +1,10 @@
 package controller;
 
 import integration.*;
-import model.Payment;
-import model.Receipt;
-import model.Register;
-import model.Sale;
+import model.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * The controller for the Point-Of-Sale.
@@ -16,6 +16,7 @@ public class Controller {
 	private AccountingSystem accountingSystem;
 	private Printer printer;
 	private Register register;
+	private List<PaymentObserver> paymentObservers = new ArrayList<>();
 
     /**
      * Creates a new instance of the controller
@@ -45,12 +46,20 @@ public class Controller {
      * @param itemIdentifier The itemIdentifier which indicates what item the customer wants to buy
      * @param quantity The quantity of the item that the customer wants to buy
      * @return A string displaying the the item and the running total
+	 * @throws OperationFailedException Thrown if there is a system failure
+	 * @throws ItemIdentifierNotFoundException Thrown if the identifier cannot be found
      */
-	public String registerItem(String itemIdentifier, int quantity) throws ItemIdentifierNotFoundException {
-		ItemDTO itemDTO = inventorySystem.findItem(itemIdentifier);
-		Item itemToBuy = inventorySystem.getItem(itemDTO, quantity);
-		sale.addItem(itemToBuy);
-		return itemToBuy + "\nRunning total is: " + sale.getTotal();
+	public String registerItem(String itemIdentifier, int quantity) throws OperationFailedException, ItemIdentifierNotFoundException{
+		try{
+			ItemDTO itemDTO = inventorySystem.findItem(itemIdentifier);
+			Item itemToBuy = inventorySystem.getItem(itemDTO, quantity);
+			sale.addItem(itemToBuy);
+			return itemToBuy + "\nRunning total is: " + sale.getTotal();
+
+		}
+		catch (SystemFailureException exception) {
+			throw new OperationFailedException("System failure has occurred", exception);
+		}
 
 
 	}
@@ -71,15 +80,21 @@ public class Controller {
      */
 	public void registerAmountPaid(double amountPaid) {
 		Payment payment = new Payment(amountPaid, sale.getTotal());
+		payment.addPaymentObservers(paymentObservers);
 		register.addPayment(payment);
 		Receipt receipt = sale.pay(payment);
 		printer.printReceipt(receipt);
 		inventorySystem.updateInventory(sale.getItemsToBuy());
 		accountingSystem.registerSale(sale);
 
+	}
 
-
-
+	/**
+	 * Registers observers
+	 * @param paymentObserverToAdd The observers that is to be registered
+	 */
+	public void addPaymentObserver(PaymentObserver paymentObserverToAdd){
+		paymentObservers.add(paymentObserverToAdd);
 	}
 
 }

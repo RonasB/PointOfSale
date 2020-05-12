@@ -2,15 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54d51373-89ff-433f-a61b-84803c88dbd6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/integration/ItemIdentifierNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controller/OperationFailedException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/integration/SystemFailureException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/PaymentObserver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/ErrorMessageHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/TotalRevenueView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/integration/InventorySystemTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PointOfSale/controller/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PointOfSale/controller/Controller.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PointOfSale/integration/InventorySystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PointOfSale/integration/InventorySystem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PointOfSale/startup/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PointOfSale/startup/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PointOfSale/integration/ItemIdentifierNotFoundException.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PointOfSale/integration/ItemIdentifierNotFoundException.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PointOfSale/model/Payment.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PointOfSale/model/Payment.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PointOfSale/view/View.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PointOfSale/view/View.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/integration/InventorySystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/integration/InventorySystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/startup/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/startup/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/integration/ItemIdentifierNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/integration/ItemIdentifierNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Payment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Payment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/View.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -47,6 +54,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="last_opened_file_path" value="C:/Program Files/Git/bin/git.exe" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -74,7 +82,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.InventorySystemTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="startup.Main" />
       <module name="PointOfSale" />
@@ -84,6 +92,21 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InventorySystemTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PointOfSale" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="integration.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="integration" />
+      <option name="MAIN_CLASS_NAME" value="integration.InventorySystemTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -135,6 +158,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.InventorySystemTest" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.ItemTest" />
         <item itemvalue="JUnit.ItemDTOTest" />
@@ -162,7 +186,9 @@
       <workItem from="1588065139843" duration="9990000" />
       <workItem from="1588146386149" duration="9049000" />
       <workItem from="1588587929857" duration="253000" />
-      <workItem from="1589017111318" duration="2316000" />
+      <workItem from="1589017111318" duration="2407000" />
+      <workItem from="1589202043525" duration="10463000" />
+      <workItem from="1589284504677" duration="2309000" />
     </task>
     <servers />
   </component>

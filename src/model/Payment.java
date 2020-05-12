@@ -1,5 +1,8 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * A class to represent the customers payment
  */
@@ -7,6 +10,7 @@ public class Payment {
 
 	private Double amountPaid;
 	private Double total;
+	private List<PaymentObserver> paymentObservers = new ArrayList<>();
 
 	/**
 	 * Creates a new instance of the payment
@@ -16,6 +20,7 @@ public class Payment {
 	public Payment(double amountPaid, double total) {
 		this.amountPaid = amountPaid;
 		this.total = total;
+
 
 	}
 
@@ -40,7 +45,32 @@ public class Payment {
 	 * @return Returns the change
 	 */
 	public double calculateChange(){
+		notifyObservers();
 		return amountPaid-total;
+	}
+
+	/**
+	 * Registers observers
+	 * @param paymentObserverToAdd The observer that is to be registered
+	 */
+	public void addPaymentObservers(PaymentObserver paymentObserverToAdd){
+		paymentObservers.add(paymentObserverToAdd);
+	}
+
+	/**
+	 * Registers observers
+	 * @param paymentObserversToAdd The observers that is to be registered
+	 */
+	public void addPaymentObservers(List<PaymentObserver> paymentObserversToAdd){
+		paymentObservers.addAll(paymentObserversToAdd);
+	}
+
+	/**
+	 * Called by methods that changes the class' state
+	 */
+	public void notifyObservers(){
+		for (PaymentObserver paymentObserver : paymentObservers)
+			paymentObserver.newPayment(total);
 	}
 
 }
