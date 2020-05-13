@@ -45,17 +45,9 @@ public class Payment {
 	 * @return Returns the change
 	 */
 	public double calculateChange(){
-		notifyObservers();
 		return amountPaid-total;
 	}
 
-	/**
-	 * Registers observers
-	 * @param paymentObserverToAdd The observer that is to be registered
-	 */
-	public void addPaymentObservers(PaymentObserver paymentObserverToAdd){
-		paymentObservers.add(paymentObserverToAdd);
-	}
 
 	/**
 	 * Registers observers
@@ -66,7 +58,7 @@ public class Payment {
 	}
 
 	/**
-	 * Called by methods that changes the class' state
+	 * Called by methods that changes the state of the class
 	 */
 	public void notifyObservers(){
 		for (PaymentObserver paymentObserver : paymentObservers)

@@ -3,7 +3,6 @@ package view;
 import controller.Controller;
 import controller.OperationFailedException;
 import integration.ItemIdentifierNotFoundException;
-import integration.SystemFailureException;
 
 
 public class View {
@@ -22,7 +21,7 @@ public class View {
 		System.out.println("-------------------------------------------------");
 		registerItem("Mango" , 1);
 		registerItem("Kiwi", 2);
-		registerItem("Kiwi", 2);
+		registerItem("fail", 2);
 		registerItem("Banana", 2);
 		registerItem("Pineapple", 3);
 		registerItem("Banana", 2);

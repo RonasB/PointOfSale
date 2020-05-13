@@ -60,8 +60,6 @@ public class Controller {
 		catch (SystemFailureException exception) {
 			throw new OperationFailedException("System failure has occurred", exception);
 		}
-
-
 	}
 
     /**
@@ -81,6 +79,7 @@ public class Controller {
 	public void registerAmountPaid(double amountPaid) {
 		Payment payment = new Payment(amountPaid, sale.getTotal());
 		payment.addPaymentObservers(paymentObservers);
+		payment.notifyObservers();
 		register.addPayment(payment);
 		Receipt receipt = sale.pay(payment);
 		printer.printReceipt(receipt);
